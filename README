@@ -1,1 +1,7 @@
 This repo is for Java GUI applications only.
+
+The sorts of technology used in this repo are:
+ - Swing
+ - SWT/JFace
+
+It was originally intended to be a PoC for use of SWT and JFace as a GUI technology, which is why the project is curently incomplete.
