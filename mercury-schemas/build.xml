@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="schemaBuild" default="gen">
+
+    <path id="classpath"/>
+
+    <taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask">
+        <classpath refid="classpath"/>
+    </taskdef>
+
+    <target name="gen" depends="compileset"/>
+
+    <target name="compileset">
+        <sequential>
+            <xjc package="test" target="test/src/java" extension="true" schema=""/>
+        </sequential>
+    </target>
+
+</project>

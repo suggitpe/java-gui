@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.suggs.org.uk/ConnectionStore"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.suggs.org.uk/ConnectionStore" xmlns:Q1="http://www.suggs.org.uk/ConnectionMetadata">
+
+    <import schemaLocation="connection-metadata.xsd" namespace="http://www.suggs.org.uk/ConnectionMetadata"></import>
+    <element name="connectionStore" type="tns:ConnectionStoreType"></element>
+
+	<complexType name="ConnectionStoreType">
+		<sequence>
+			<element name="connection" type="tns:ConnectionType"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ConnectionType">
+		<sequence>
+
+
+
+            <element name="description" type="string" minOccurs="0" maxOccurs="1">
+			</element>
+
+			<element name="parameters" type="tns:ConnectionParamatersType"></element>
+            <element name="metadata" type="Q1:ConnectionMetadataType" minOccurs="0" maxOccurs="1">
+			</element>
+        </sequence>
+		<attribute name="name" type="string" use="required"></attribute>
+		<attribute name="type" type="string" use="required"></attribute>
+	</complexType>
+
+
+	<complexType name="ConnectionSecurityType">
+		<sequence>
+			<element name="username" type="string" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<element name="password" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ConnectionDataGroup">
+		<sequence>
+			<element name="connectiondata" type="tns:ConnectionDataItemType"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ConnectionDataItemType">
+		<sequence>
+			<element name="key" type="string"></element>
+			<element name="value" type="string"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ConnectionParamatersType">
+		<sequence>
+            <element name="hostname" type="string" minOccurs="1" maxOccurs="1">
+			</element>
+            <element name="port" type="int" minOccurs="1" maxOccurs="1">
+			</element>
+            <element name="security" type="tns:ConnectionSecurityType" minOccurs="0" maxOccurs="1">
+			</element>
+            <element name="connectiondataitems" type="tns:ConnectionDataGroup" minOccurs="1" maxOccurs="1">
+			</element>
+        </sequence>
+	</complexType>
+	
+    <complexType name="ConnectionMetadataType"></complexType>
+</schema>

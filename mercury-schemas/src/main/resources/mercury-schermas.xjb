@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jxb:bindings version="2.0" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+
+    <jxb:globalBindings fixedAttributeAsConstantProperty="false"
+            collectionType="java.util.ArrayList"
+            typesafeEnumMemberName="generateError"
+            enableFailFastCheck="false"
+            generateIsSetMethod="true"
+            underscoreBinding="asCharInWord" />
+
+    <jxb:bindings node="/xs:schema" schemaLocation="connection-store.xsd" >
+        <jxb:schemaBindings>
+            <jxb:package name="org.suggs.apps.mercury.connectionstore"/>
+        </jxb:schemaBindings>
+    </jxb:bindings>
+    
+    <jxb:bindings node="/xs:schema" schemaLocation="connection-metadata.xsd" >
+        <jxb:schemaBindings>
+            <jxb:package name="org.suggs.apps.mercury.connectionmetadata"/>
+        </jxb:schemaBindings>
+    </jxb:bindings>
+</jxb:bindings>

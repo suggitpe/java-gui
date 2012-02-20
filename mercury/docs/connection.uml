@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:StateMachine xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_naKpoPO7Ed2MA67ehDiSDQ" name="Connection State Manager">
+  <region xmi:id="_tV1W0PO7Ed2MA67ehDiSDQ" name="region1">
+    <subvertex xmi:type="uml:Pseudostate" xmi:id="_yiC9APO7Ed2MA67ehDiSDQ"/>
+    <subvertex xmi:type="uml:State" xmi:id="_zvjR8PO7Ed2MA67ehDiSDQ" name="Disconnected"/>
+    <subvertex xmi:type="uml:State" xmi:id="_1TOrMPO7Ed2MA67ehDiSDQ" name="Connected"/>
+    <subvertex xmi:type="uml:State" xmi:id="_2hMTIPO7Ed2MA67ehDiSDQ" name="Connecting"/>
+    <subvertex xmi:type="uml:State" xmi:id="_60RR4PO7Ed2MA67ehDiSDQ" name="Failed"/>
+    <subvertex xmi:type="uml:State" xmi:id="_DqzNsPO8Ed2MA67ehDiSDQ" name="Disconnecting"/>
+    <transition xmi:id="_5Um18PO7Ed2MA67ehDiSDQ" name="Initial" target="_zvjR8PO7Ed2MA67ehDiSDQ" source="_yiC9APO7Ed2MA67ehDiSDQ"/>
+    <transition xmi:id="_6EqZ4PO7Ed2MA67ehDiSDQ" name="performConnect" target="_2hMTIPO7Ed2MA67ehDiSDQ" source="_zvjR8PO7Ed2MA67ehDiSDQ"/>
+    <transition xmi:id="__bIvUPO7Ed2MA67ehDiSDQ" name="failToConnect" target="_60RR4PO7Ed2MA67ehDiSDQ" source="_2hMTIPO7Ed2MA67ehDiSDQ"/>
+    <transition xmi:id="_AnKdkPO8Ed2MA67ehDiSDQ" name="performConnect" target="_2hMTIPO7Ed2MA67ehDiSDQ" source="_60RR4PO7Ed2MA67ehDiSDQ"/>
+    <transition xmi:id="_CwCOkPO8Ed2MA67ehDiSDQ" name="completeConnect" target="_1TOrMPO7Ed2MA67ehDiSDQ" source="_2hMTIPO7Ed2MA67ehDiSDQ"/>
+    <transition xmi:id="_FBPcMPO8Ed2MA67ehDiSDQ" name="performDisconnect" target="_DqzNsPO8Ed2MA67ehDiSDQ" source="_1TOrMPO7Ed2MA67ehDiSDQ"/>
+    <transition xmi:id="_FnLa0PO8Ed2MA67ehDiSDQ" name="completeDisconnect" target="_zvjR8PO7Ed2MA67ehDiSDQ" source="_DqzNsPO8Ed2MA67ehDiSDQ"/>
+  </region>
+</uml:StateMachine>

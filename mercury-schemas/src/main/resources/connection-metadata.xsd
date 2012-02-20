@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.suggs.org.uk/ConnectionMetadata"
+    elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.suggs.org.uk/ConnectionMetadata">
+    
+    <complexType name="DestinationType">
+        <sequence>
+            <element name="name" type="string" minOccurs="1"
+                maxOccurs="1">
+            </element>
+            <element name="destType" minOccurs="1" maxOccurs="1"
+                type="tns:JmsType">
+
+            </element>
+        </sequence>
+    </complexType>
+    
+    <simpleType name="JmsType">
+        <restriction base="string">
+            <enumeration value="Queue"></enumeration>
+            <enumeration value="Topic"></enumeration>
+            <enumeration value="Generic"></enumeration>
+        </restriction>
+    </simpleType>
+
+    <complexType name="ConnectionFactoryGroup">
+        <sequence>
+            <element name="connectionfactory" type="tns:ConnectionFactoryType" minOccurs="0" maxOccurs="unbounded"></element>
+        </sequence>
+    </complexType>
+
+    <complexType name="ConnectionFactoryType">
+        <sequence>
+            <element name="name" type="string"></element>
+            <element name="factType" type="tns:JmsType"></element>
+        </sequence>
+    </complexType>
+    
+    <complexType name="DestinationGroup">
+        <sequence>
+            <element name="destinations" type="tns:DestinationType" minOccurs="0" maxOccurs="unbounded"></element>
+        </sequence>
+    </complexType>
+
+    <complexType name="ConnectionMetadataType">
+    </complexType>
+</schema>

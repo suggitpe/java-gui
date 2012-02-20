@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT connectionStore (connection*) >
+
+<!ELEMENT connection (hostname, port, metadata?, connectionFactories, destinations?) >
+<!ATTLIST connection 
+    name CDATA #REQUIRED 
+    type CDATA #REQUIRED >
+<!ELEMENT hostname (#PCDATA) >
+<!ELEMENT port (#PCDATA) >
+
+<!ELEMENT metadata ( data* ) >
+<!ELEMENT data (#PCDATA) >
+<!ATTLIST data
+    name CDATA #REQUIRED >
+
+<!ELEMENT connectionFactories (factory*) >
+<!ELEMENT factory (#PCDATA) >
+<!ATTLIST factory
+    type CDATA #REQUIRED >
+
+<!ELEMENT destinations (destination*) >
+<!ELEMENT destination (#PCDATA) >
+<!ATTLIST destination
+    type CDATA #REQUIRED >
