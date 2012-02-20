@@ -14,7 +14,7 @@
     <name>Mercury - Schemas</name>
 
     <properties>
-        <sonar.skippedModules>${artifactId}</sonar.skippedModules>
+        <sonar.skippedModules>${project.artifactId}</sonar.skippedModules>
     </properties>
 
     <build>
