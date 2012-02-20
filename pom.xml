@@ -18,13 +18,6 @@
         <log4j.version>1.2.16</log4j.version>
         <slf4j.version>1.6.1</slf4j.version>
         <spring.version>3.0.5.RELEASE</spring.version>
-        <selenium.version>2.13.0</selenium.version>
-        <jbehave.core.version>3.5.4</jbehave.core.version>
-        <jbehave.web.version>3.4.3</jbehave.web.version>
-        <jbehave.site.version>3.1.1</jbehave.site.version>
-        <jbehave.ignoreFailureInStories>true</jbehave.ignoreFailureInStories>
-        <jbehave.ignoreFailureInView>false</jbehave.ignoreFailureInView>
-        <jbehave.generateViewAfterStories>true</jbehave.generateViewAfterStories>
     </properties>
 
     <!-- team developers -->
@@ -137,23 +130,14 @@
 
             </plugins>
         </pluginManagement>
-
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-            </plugin>
-        </plugins>
     </build>
 
     <repositories>
     </repositories>
 
-    <!-- this is where we define the location of standard and local Maven plugins -->
     <pluginRepositories>
     </pluginRepositories>
 
-    <!-- this is where we define the high level Scribe dependencies (ie those that are not project specific) -->
     <dependencies>
         <!-- main compile time dependencies -->
         <!-- <dependency> <groupId>commons-logging</groupId> <artifactId>commons-logging</artifactId> <scope>compile</scope> 
