@@ -1,0 +1,40 @@
+allprojects { projects ->
+    apply plugin: 'idea'
+    defaultTasks 'clean', 'build'
+
+    idea.module {
+        downloadSources = true
+    }
+}
+
+task wrapper(type: Wrapper) {
+    description = 'Generates gradlew scripts for NIX and win envs'
+    gradleVersion = '1.10'
+}
+
+subprojects { subprojects ->
+
+    apply from: "$rootDir/gradle/libraries.gradle"
+    apply from: "$rootDir/gradle/ide.gradle"
+    apply plugin: 'java'
+
+    group = 'org.suggs.sandbox'
+
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+
+    dependencies {
+        compile libs.slf4jApi
+
+        runtime libs.logback
+
+        testCompile libs.test.junit,
+                libs.test.mockito
+    }
+}
+
+project('sandbox:javafx') {
+}
+
